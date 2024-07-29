@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LibraryManagement extends JFrame implements ActionListener {
@@ -226,7 +228,39 @@ public class LibraryManagement extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(this,"No books in store","Report",JOptionPane.INFORMATION_MESSAGE);
             return;
         }
+        
+        StringBuilder report = new StringBuilder();
+        report.append("Book Report: \n\n");
+        report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
+            "Book ID", "Title", "Author", "Publisher", "Year", "ISBN", "Copies"));
+        report.append("------------------------------------------------------------------------------");
 
+        for (Book book : books) {
+            report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
+            book.getId(),
+            book.getTitle(),
+            book.getAuthor(),
+            book.getPublisher(),
+            book.getYear(),
+            book.getIsbn(),
+            book.getCopies()
+            ));
+        }
+
+        JTextArea textArea = new JTextArea(report.toString());
+        textArea.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setPreferredSize(new Dimension(700, 400));
+
+        JOptionPane.showMessageDialog(this, scrollPane, "Book Report", JOptionPane.INFORMATION_MESSAGE);
+
+        try (FileWriter writer = new FileWriter("LibraryReport.txt")){
+            writer.write(report.toString());
+            JOptionPane.showMessageDialog(this, "Report has been saved to LibraryReport.txt", "File Saved", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "An Error Occured while writing report to file", "File Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 
