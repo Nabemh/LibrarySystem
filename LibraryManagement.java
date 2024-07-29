@@ -10,7 +10,8 @@ public class LibraryManagement extends JFrame implements ActionListener {
 
     public LibraryManagement() {
         setTitle("Library Management System");
-        setSize(600, 300);
+        setIconImage(Toolkit.getDefaultToolkit().getImage("appIcon.png"));
+        setSize(600, 350);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JLabel label1 = new JLabel("Book ID");
@@ -34,6 +35,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
         editButton = new JButton("Edit");
         deleteButton = new JButton("Delete");
         clearButton = new JButton("Clear");
+        reportButton = new JButton("Report");
         exitButton = new JButton("Exit");
 
         addButton.addActionListener(this);
@@ -41,6 +43,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
         editButton.addActionListener(this);
         deleteButton.addActionListener(this);
         clearButton.addActionListener(this);
+        reportButton.addActionListener(this);
         exitButton.addActionListener(this);
 
         JPanel panel = new JPanel();
@@ -111,12 +114,15 @@ public class LibraryManagement extends JFrame implements ActionListener {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
         buttonPanel.add(clearButton);
+        buttonPanel.add(reportButton);
         buttonPanel.add(exitButton);
 
         construct.gridx = 0;
         construct.gridy = 7;
         construct.gridwidth = 2;
         panel.add(buttonPanel, construct);
+
+        addDefaultBooks();
 
         add(panel);
         setVisible(true);
@@ -134,6 +140,8 @@ public class LibraryManagement extends JFrame implements ActionListener {
             deleteBook();
         } else if (e.getSource() == clearButton) {
             clearFields();
+        } else if (e.getSource() == reportButton){
+            generateReport();
         } else if (e.getSource() == exitButton) {
             exitApplication();
         }
@@ -211,6 +219,14 @@ public class LibraryManagement extends JFrame implements ActionListener {
         textField5.setText("");
         textField6.setText("");
         textField7.setText("");
+    }
+
+    private void generateReport(){
+        if (books.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"No books in store","Report",JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
     }
 
 
