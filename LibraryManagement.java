@@ -139,6 +139,25 @@ public class LibraryManagement extends JFrame implements ActionListener {
         }
     }
 
+    private void addBook() {
+        try {
+            Book book = new Book(
+                textField1.getText(),
+                textField2.getText(),
+                textField3.getText(),
+                textField4.getText(),
+                textField5.getText(),
+                textField6.getText(),
+                textField7.getText()
+            );
+            books.add(book);
+            JOptionPane.showMessageDialog(this, "Book added successfully");
+            clearFields();
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter valid numeric values for Year and Number of Copies.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
     private void clearFields() {
         textField1.setText("");
         textField2.setText("");
