@@ -158,6 +158,16 @@ public class LibraryManagement extends JFrame implements ActionListener {
         }
     }
 
+    private void viewBooks() {
+        BookTableModel model = new BookTableModel(books);
+        JTable table = new JTable(model);
+        JScrollPane scrollPane = new JScrollPane(table);
+        JFrame frame = new JFrame("View Books");
+        frame.add(scrollPane);
+        frame.setSize(800, 400);
+        frame.setVisible(true);
+    }
+
     private void clearFields() {
         textField1.setText("");
         textField2.setText("");
