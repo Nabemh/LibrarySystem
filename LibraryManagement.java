@@ -180,6 +180,19 @@ public class LibraryManagement extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(this, "Book not found");
     }
 
+    private void deleteBook() {
+        String bookID = JOptionPane.showInputDialog(this, "Enter book ID to delete:");
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getId().equals(bookID)) {
+                books.remove(i);
+                JOptionPane.showMessageDialog(this, "Book deleted successfully");
+                clearFields();
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Book not found");
+    }
+
     private void viewBooks() {
         BookTableModel model = new BookTableModel(books);
         JTable table = new JTable(model);
