@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LibraryManagement extends JFrame implements ActionListener {
     private JTextField textField1, textField2, textField3, textField4, textField5, textField6, textField7;
-    private JButton addButton, viewButton, editButton, deleteButton, clearButton, exitButton;
+    private JButton addButton, viewButton, editButton, deleteButton, clearButton, reportButton, exitButton;
     private ArrayList<Book> books = new ArrayList<>();
 
     public LibraryManagement() {
@@ -124,7 +124,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
         construct.gridwidth = 2;
         panel.add(buttonPanel, construct);
 
-        addDefaultBooks();
+        //addDefaultBooks();
 
         add(panel);
         setVisible(true);
@@ -233,7 +233,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
         report.append("Book Report: \n\n");
         report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
             "Book ID", "Title", "Author", "Publisher", "Year", "ISBN", "Copies"));
-        report.append("------------------------------------------------------------------------------");
+        //report.append("------------------------------------------------------------------------------");
 
         for (Book book : books) {
             report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
