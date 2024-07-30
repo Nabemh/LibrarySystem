@@ -46,13 +46,22 @@ class login extends JPanel {
         add(new JPasswordField("Password", 20), gbc);
 
         gbc.gridy = 3;
-        add(new JButton("Login"), gbc);
+        loginButton = new JButton("Login");
+        add(loginButton, gbc);
+
 
         gbc.gridy = 4;
         add(new JButton("Forgot Password"), gbc);
 
+        JButton registerButton = new JButton("Register");
         gbc.gridy = 5;
-        add(new JButton("Register"), gbc);
+        add(registerButton, gbc);
+
+        registerButton.addActionListener(e -> {
+            RegistrationFrame registrationFrame = new RegistrationFrame();
+            registrationFrame.setVisible(true);
+            SwingUtilities.getWindowAncestor(this).dispose();
+    });
     }
 
     @Override
