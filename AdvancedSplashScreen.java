@@ -9,22 +9,17 @@ public class AdvancedSplashScreen extends JWindow {
     private JLabel statusLabel;
 
     public AdvancedSplashScreen() {
-        //  size and location
+        
         setSize(400, 300);
         setLocationRelativeTo(null);
 
 
-         //  background image
+         
         JLabel backgroundImage = new JLabel(new ImageIcon("background.jpeg"));
         backgroundImage.setLayout(null);
         add(backgroundImage, 0);
         backgroundImage.setBounds(0, 0, getWidth(), getHeight());
-
-
-
-        //  background color
         getContentPane().setBackground(Color.WHITE);
-
 
 
         JLabel title = new JLabel("Library Management System");
@@ -32,21 +27,18 @@ public class AdvancedSplashScreen extends JWindow {
         title.setBounds(120, 160, 250, 30);
         add(title);
 
-        //  progress bar
+
         progressBar = new JProgressBar(0, 100);
         progressBar.setBounds(50, 200, 300, 20);
         progressBar.setStringPainted(true);
         add(progressBar);
 
-        //  status label
         statusLabel = new JLabel("Loading...");
         statusLabel.setBounds(50, 220, 200, 20);
         add(statusLabel);
 
-        //  layout
         setLayout(null);
 
-        // Simulate loading
         Timer timer = new Timer(100, new ActionListener() {
             int count = 0;
 
@@ -59,8 +51,7 @@ public class AdvancedSplashScreen extends JWindow {
                 if (count >= 100) {
                     ((Timer) e.getSource()).stop();
                     dispose();
-                    // Open main application window here
-                    //new AdminDashboard().setVisible(true);
+                    new LibraryManagement();  // add login page here
                 }
             }
         });

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RegistrationFrame",
+            "request": "launch",
+            "mainClass": "RegistrationFrame",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
+            "name": "AdvancedSplashScreen",
+            "request": "launch",
+            "mainClass": "AdvancedSplashScreen",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
             "name": "LibApp",
             "request": "launch",
             "mainClass": "LibApp",

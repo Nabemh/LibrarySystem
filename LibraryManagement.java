@@ -11,32 +11,18 @@ public class LibraryManagement extends JFrame implements ActionListener {
     private ArrayList<Book> books = new ArrayList<>();
 
     private class BackgroundPanel extends JPanel {
-        private Image back;
+        private Image backgroundImage;
 
-        public BackgroundPanel(Image back){
-            this.back = back;
+        public BackgroundPanel(Image backgroundImage) {
+            this.backgroundImage = backgroundImage;
         }
 
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
-            g.drawImage(back, 0, 0, getWidth(), getHeight(), this);
-        }
-    }
-
-    private class BannerPanel extends JPanel{
-        private Image banner;
-
-        public BannerPanel(Image banner){
-            this.banner = banner;
-            setPreferredSize(new Dimension(getWidth(), 100));
-        }
-
-        @Override
-
-        protected void paintComponent(Graphics g){
-            super.paintComponent(g);
-            g.drawImage(banner, 0,0, getWidth(), getHeight(), this);
+            if (backgroundImage != null) {
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+            }
         }
     }
 
@@ -47,15 +33,21 @@ public class LibraryManagement extends JFrame implements ActionListener {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int ySize = ((int) tk.getScreenSize().getHeight());
         int xSize = ((int) tk.getScreenSize().getWidth());
-        this.setSize(xSize,ySize);
-        this.setVisible(true);
+        this.setSize(xSize, ySize);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        ImageIcon backgrd;
-        Image bcg;
+    
+        Image backgroundImage = new ImageIcon("background.png").getImage(); // Ensure the image path is correct
 
-        backgrd = new ImageIcon("background.png");
-        bcg = backgrd.getImage();
+        BackgroundPanel backgroundPanel = new BackgroundPanel(backgroundImage);
+        backgroundPanel.setLayout(new BorderLayout());
+
+        JPanel formPanel = new JPanel();
+        formPanel.setLayout(new GridBagLayout());
+
+        GridBagConstraints construct = new GridBagConstraints();
+        construct.fill = GridBagConstraints.HORIZONTAL;
+        construct.insets = new Insets(5, 5, 5, 5);
 
         JLabel label1 = new JLabel("Book ID");
         JLabel label2 = new JLabel("Book Title");
@@ -89,67 +81,61 @@ public class LibraryManagement extends JFrame implements ActionListener {
         reportButton.addActionListener(this);
         exitButton.addActionListener(this);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridBagLayout());
-        GridBagConstraints construct = new GridBagConstraints();
-        construct.fill = GridBagConstraints.HORIZONTAL;
-        construct.insets = new Insets(5, 5, 5, 5);
-
         construct.gridx = 0;
         construct.gridy = 0;
-        panel.add(label1, construct);
+        formPanel.add(label1, construct);
 
         construct.gridx = 1;
         construct.gridy = 0;
-        panel.add(textField1, construct);
+        formPanel.add(textField1, construct);
 
         construct.gridx = 0;
         construct.gridy = 1;
-        panel.add(label2, construct);
+        formPanel.add(label2, construct);
 
         construct.gridx = 1;
         construct.gridy = 1;
-        panel.add(textField2, construct);
+        formPanel.add(textField2, construct);
 
         construct.gridx = 0;
         construct.gridy = 2;
-        panel.add(label3, construct);
+        formPanel.add(label3, construct);
 
         construct.gridx = 1;
         construct.gridy = 2;
-        panel.add(textField3, construct);
+        formPanel.add(textField3, construct);
 
         construct.gridx = 0;
         construct.gridy = 3;
-        panel.add(label4, construct);
+        formPanel.add(label4, construct);
 
         construct.gridx = 1;
         construct.gridy = 3;
-        panel.add(textField4, construct);
+        formPanel.add(textField4, construct);
 
         construct.gridx = 0;
         construct.gridy = 4;
-        panel.add(label5, construct);
+        formPanel.add(label5, construct);
 
         construct.gridx = 1;
         construct.gridy = 4;
-        panel.add(textField5, construct);
+        formPanel.add(textField5, construct);
 
         construct.gridx = 0;
         construct.gridy = 5;
-        panel.add(label6, construct);
+        formPanel.add(label6, construct);
 
         construct.gridx = 1;
         construct.gridy = 5;
-        panel.add(textField6, construct);
+        formPanel.add(textField6, construct);
 
         construct.gridx = 0;
         construct.gridy = 6;
-        panel.add(label7, construct);
+        formPanel.add(label7, construct);
 
         construct.gridx = 1;
         construct.gridy = 6;
-        panel.add(textField7, construct);
+        formPanel.add(textField7, construct);
 
         JPanel buttonPanel = new JPanel(new FlowLayout());
         buttonPanel.add(addButton);
@@ -163,19 +149,15 @@ public class LibraryManagement extends JFrame implements ActionListener {
         construct.gridx = 0;
         construct.gridy = 7;
         construct.gridwidth = 2;
-        panel.add(buttonPanel, construct);
+        formPanel.add(buttonPanel, construct);
 
-        //addDefaultBooks();
+        backgroundPanel.add(formPanel, BorderLayout.CENTER);
 
-        add(panel);
+        setContentPane(backgroundPanel);
         setVisible(true);
-
-        // public void paintComponent (Graphics g){
-        //     g.drawImage(bg, 0, 0, this);
-        // }
-
     }
 
+    
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == addButton) {
             addBook();
@@ -187,7 +169,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
             deleteBook();
         } else if (e.getSource() == clearButton) {
             clearFields();
-        } else if (e.getSource() == reportButton){
+        } else if (e.getSource() == reportButton) {
             generateReport();
         } else if (e.getSource() == exitButton) {
             exitApplication();
@@ -268,28 +250,26 @@ public class LibraryManagement extends JFrame implements ActionListener {
         textField7.setText("");
     }
 
-    private void generateReport(){
+    private void generateReport() {
         if (books.isEmpty()) {
-            JOptionPane.showMessageDialog(this,"No books in store","Report",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No books in store", "Report", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-        
+
         StringBuilder report = new StringBuilder();
         report.append("Book Report: \n\n");
         report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
             "Book ID", "Title", "Author", "Publisher", "Year", "ISBN", "Copies"));
-        //report.append("------------------------------------------------------------------------------");
 
         for (Book book : books) {
             report.append(String.format("%-10s %-25s %-15s %-20s %-5s %-13s %-5s\n",
-            book.getId(),
-            book.getTitle(),
-            book.getAuthor(),
-            book.getPublisher(),
-            book.getYear(),
-            book.getIsbn(),
-            book.getCopies()
-            ));
+                book.getId(),
+                book.getTitle(),
+                book.getAuthor(),
+                book.getPublisher(),
+                book.getYear(),
+                book.getIsbn(),
+                book.getCopies()));
         }
 
         JTextArea textArea = new JTextArea(report.toString());
@@ -300,14 +280,13 @@ public class LibraryManagement extends JFrame implements ActionListener {
 
         JOptionPane.showMessageDialog(this, scrollPane, "Book Report", JOptionPane.INFORMATION_MESSAGE);
 
-        try (FileWriter writer = new FileWriter("LibraryReport.txt")){
+        try (FileWriter writer = new FileWriter("LibraryReport.txt")) {
             writer.write(report.toString());
             JOptionPane.showMessageDialog(this, "Report has been saved to LibraryReport.txt", "File Saved", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "An Error Occured while writing report to file", "File Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "An Error Occurred while writing report to file", "File Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 
     private void exitApplication() {
         int option = JOptionPane.showConfirmDialog(this, "Are you sure you want to exit?", "Exit Confirmation", JOptionPane.YES_NO_OPTION);
