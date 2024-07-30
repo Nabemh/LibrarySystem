@@ -234,6 +234,38 @@ public class LibraryManagement extends JFrame implements ActionListener {
         BookTableModel model = new BookTableModel(books);
         JTable table = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(table);
+
+        // Create the search bar components
+        JTextField searchField = new JTextField(20);
+        JButton searchButton = new JButton("Search");
+
+        JPanel searchPanel = new JPanel();
+        searchPanel.add(new JLabel("Search:"));
+        searchPanel.add(searchField);
+        searchPanel.add(searchButton);
+
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String searchText = searchField.getText();
+                if (searchText.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Please enter a book title to search.");
+                    return;
+                }
+                boolean found = false;
+                for (int i = 0; i < books.size(); i++) {
+                    if (books.get(i).equalsIgnoreCase(searchText)) {
+                        found = true;
+                        JOptionPane.showMessageDialog(null, "Book is available. Book number: " + (i + 1));
+                        break;
+                    }
+                }
+                if (!found) {
+                    JOptionPane.showMessageDialog(null, "Book unavailable.");
+                }
+            }
+        });
+
         JFrame frame = new JFrame("View Books");
         frame.add(scrollPane);
         frame.setSize(800, 400);
