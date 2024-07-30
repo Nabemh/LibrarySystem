@@ -46,7 +46,9 @@ class login extends JPanel {
         add(new JPasswordField("Password", 20), gbc);
 
         gbc.gridy = 3;
-        add(new JButton("Login"), gbc);
+        loginButton = new JButton("Login");
+        add(loginButton, gbc);
+
 
         gbc.gridy = 4;
         add(new JButton("Forgot Password"), gbc);
@@ -61,6 +63,7 @@ class login extends JPanel {
             SwingUtilities.getWindowAncestor(this).dispose();
     });
     }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
