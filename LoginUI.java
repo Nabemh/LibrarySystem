@@ -8,13 +8,6 @@ public class LoginUI extends JFrame {
         add(jp);
     }
 
-    public static void main(String[] args) {
-        LoginUI f = new LoginUI();
-        f.setVisible(true);
-        f.setSize(600, 350);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setLocationRelativeTo(null);
-    }
 }
 
 class login extends JPanel {
@@ -28,11 +21,6 @@ class login extends JPanel {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
-
-        Font f = new Font("", Font.BOLD, 50);
-        Font f1 = new Font("", Font.BOLD, 30);
-        Font f2 = new Font("", Font.BOLD, 20);
-        Font f3 = new Font("", Font.BOLD, 35);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
