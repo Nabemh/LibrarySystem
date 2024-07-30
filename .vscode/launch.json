@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LoginUI",
+            "request": "launch",
+            "mainClass": "LoginUI",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
             "name": "login",
             "request": "launch",
             "mainClass": "login",
