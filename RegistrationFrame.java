@@ -13,43 +13,70 @@ public class RegistrationFrame extends JFrame {
     private final JButton registerButton;
 
      public RegistrationFrame() {
-        setLayout(new FlowLayout());
+       JPanel panel = new JPanel(new GridBagLayout());
+       GridBagConstraints gbc = new GridBagConstraints();
+       gbc.insets = new Insets(5, 5, 5, 5);
         
         
         JLabel firstNameLabel = new JLabel("First Name:");
-        firstNameField = new JTextField(10);
+        firstNameField = new JTextField(15);
 
         JLabel lastNameLabel = new JLabel("Last Name:");
-        lastNameField = new JTextField(10);
+        lastNameField = new JTextField(15);
 
         JLabel usernameLabel = new JLabel("Username:");
-        usernameField = new JTextField(10);
+        usernameField = new JTextField(15);
 
         JLabel passwordLabel = new JLabel("Password:");
-        passwordField = new JPasswordField(10);
+        passwordField = new JPasswordField(15);
 
         JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
-        confirmPasswordField = new JPasswordField(10);
+        confirmPasswordField = new JPasswordField(15);
 
         registerButton = new JButton("Register");
 
-        JPanel panel = new JPanel();
-panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-panel.add(firstNameLabel);
-panel.add(firstNameField);
-panel.add(lastNameLabel);
-panel.add(lastNameField);
-panel.add(usernameLabel);
-panel.add(usernameField);
-panel.add(passwordLabel);
-panel.add(passwordField);
-panel.add(confirmPasswordLabel);
-panel.add(confirmPasswordField);
-panel.add(registerButton);
+    gbc.gridx = 0;
+    gbc.gridy = 0;
+    panel.add(firstNameLabel, gbc);
 
-add(panel, BorderLayout.CENTER);
-           
+    gbc.gridy++;
+    panel.add(firstNameField, gbc);
+
+    gbc.gridy++;
+    panel.add(lastNameLabel, gbc);
+
+    gbc.gridy++;
+    panel.add(lastNameField, gbc);
+
+    gbc.gridy++;
+    panel.add(usernameLabel, gbc);
+
+    gbc.gridy++;
+    panel.add(usernameField, gbc);
+
+    gbc.gridy++;
+    panel.add(passwordLabel, gbc);
+
+    gbc.gridy++;
+    panel.add(passwordField, gbc);
+
+    gbc.gridy++;
+    panel.add(confirmPasswordLabel, gbc);
+
+    gbc.gridy++;
+    panel.add(confirmPasswordField, gbc);
+
+    gbc.gridy++;
+    panel.add(registerButton, gbc);
+
+    add(panel);
+    pack();
+    setLocationRelativeTo(null);  
+    setExtendedState(JFrame.MAXIMIZED_BOTH);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setVisible(true);       
+
                 registerButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -74,18 +101,7 @@ add(panel, BorderLayout.CENTER);
                     }    
                 });
 
-     setSize(300, 200);
-     setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        
     }
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new RegistrationFrame();
-            }
-        });
-
-    }     
+         
 };
