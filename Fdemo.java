@@ -14,7 +14,7 @@ public class Fdemo extends JFrame{
 class JPdemo extends JPanel{
     ImageIcon back;
     Image bg;
-    JPdemo(){
+    JPdemo(){   
         setLayout(null);
         Font f=new Font("",Font.BOLD, 50);
         Font f1=new Font("",Font.BOLD, 30);
@@ -69,7 +69,9 @@ class login {
     public static void main(String[] args) {
         Fdemo f = new Fdemo();
         f.setVisible(true);
-        f.setBounds(150,20,1300,798);
+        //f.setBounds(150,20,1300,798);
+        f.setSize(600, 350);
+
     }
 }
 

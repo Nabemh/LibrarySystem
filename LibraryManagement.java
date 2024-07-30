@@ -10,11 +10,52 @@ public class LibraryManagement extends JFrame implements ActionListener {
     private JButton addButton, viewButton, editButton, deleteButton, clearButton, reportButton, exitButton;
     private ArrayList<Book> books = new ArrayList<>();
 
+    private class BackgroundPanel extends JPanel {
+        private Image back;
+
+        public BackgroundPanel(Image back){
+            this.back = back;
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.drawImage(back, 0, 0, getWidth(), getHeight(), this);
+        }
+    }
+
+    private class BannerPanel extends JPanel{
+        private Image banner;
+
+        public BannerPanel(Image banner){
+            this.banner = banner;
+            setPreferredSize(new Dimension(getWidth(), 100));
+        }
+
+        @Override
+
+        protected void paintComponent(Graphics g){
+            super.paintComponent(g);
+            g.drawImage(banner, 0,0, getWidth(), getHeight(), this);
+        }
+    }
+
     public LibraryManagement() {
         setTitle("Library Management System");
         setIconImage(Toolkit.getDefaultToolkit().getImage("appIcon.png"));
-        setSize(600, 350);
+        setResizable(false);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        this.setSize(xSize,ySize);
+        this.setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        ImageIcon backgrd;
+        Image bcg;
+
+        backgrd = new ImageIcon("background.png");
+        bcg = backgrd.getImage();
 
         JLabel label1 = new JLabel("Book ID");
         JLabel label2 = new JLabel("Book Title");
@@ -128,6 +169,10 @@ public class LibraryManagement extends JFrame implements ActionListener {
 
         add(panel);
         setVisible(true);
+
+        // public void paintComponent (Graphics g){
+        //     g.drawImage(bg, 0, 0, this);
+        // }
 
     }
 

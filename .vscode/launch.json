@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LibApp",
+            "request": "launch",
+            "mainClass": "LibApp",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
+            "name": "login",
+            "request": "launch",
+            "mainClass": "login",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
