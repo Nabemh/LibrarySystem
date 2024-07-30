@@ -51,7 +51,7 @@ public class AdvancedSplashScreen extends JWindow {
                 if (count >= 100) {
                     ((Timer) e.getSource()).stop();
                     dispose();
-                    new LibraryManagement();  // add admin login page here
+                    new LibraryManagement();  // add  login page here
                 }
             }
         });
