@@ -8,14 +8,14 @@ public class LoginUI extends JFrame {
         add(jp);
     }
 
-//     public static void main(String[] args) {
-//         LoginUI f = new LoginUI();
-//         f.setVisible(true);
-//         f.setSize(600, 350);
-//         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//         f.setLocationRelativeTo(null);
-//     }
-// }
+    public static void main(String[] args) {
+        LoginUI f = new LoginUI();
+        f.setVisible(true);
+        f.setSize(600, 350);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);
+    }
+}
 
 class login extends JPanel {
     ImageIcon back;
@@ -46,8 +46,12 @@ class login extends JPanel {
         add(new JPasswordField("Password", 20), gbc);
 
         gbc.gridy = 3;
-        loginButton = new JButton("Login");
+        JButton loginButton = new JButton("Login");
         add(loginButton, gbc);
+
+        loginButton.addActionListener(e ->{
+            new LibraryManagement();
+        });
 
 
         gbc.gridy = 4;
