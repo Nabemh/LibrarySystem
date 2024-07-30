@@ -51,10 +51,16 @@ class login extends JPanel {
         gbc.gridy = 4;
         add(new JButton("Forgot Password"), gbc);
 
+        JButton registerButton = new JButton("Register");
         gbc.gridy = 5;
-        add(new JButton("Register"), gbc);
-    }
+        add(registerButton, gbc);
 
+        registerButton.addActionListener(e -> {
+            RegistrationFrame registrationFrame = new RegistrationFrame();
+            registrationFrame.setVisible(true);
+            SwingUtilities.getWindowAncestor(this).dispose();
+    });
+    }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
