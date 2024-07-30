@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "login",
+            "request": "launch",
+            "mainClass": "login",
+            "projectName": "LibrarySystem_b18ce9db"
+        },
+        {
+            "type": "java",
             "name": "RegistrationFrame",
             "request": "launch",
             "mainClass": "RegistrationFrame",
