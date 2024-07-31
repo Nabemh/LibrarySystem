@@ -22,7 +22,6 @@ public class LibraryManagement extends JFrame implements ActionListener {
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             if (backgroundImage != null) {
-                // Draw the image to cover the entire panel
                 g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
             }
         }
@@ -233,7 +232,6 @@ public class LibraryManagement extends JFrame implements ActionListener {
         JTable table = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(table);
 
-        // Create the search bar components
         JTextField searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
 
@@ -252,11 +250,12 @@ public class LibraryManagement extends JFrame implements ActionListener {
                 }
                 boolean found = false;
                 for (int i = 0; i < books.size(); i++) {
-                    if (books.get(i).equalsIgnoreCase(searchText)) {
+                    if (books.get(i).getTitle().equalsIgnoreCase(searchText)) {
                         found = true;
                         JOptionPane.showMessageDialog(null, "Book is available. Book number: " + (i + 1));
                         break;
                     }
+                    
                 }
                 if (!found) {
                     JOptionPane.showMessageDialog(null, "Book unavailable.");

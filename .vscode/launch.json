@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LibrarySearchSystem",
+            "request": "launch",
+            "mainClass": "LibrarySearchSystem",
+            "projectName": "Library_c86f1b03"
+        },
+        {
+            "type": "java",
             "name": "LoginUI",
             "request": "launch",
             "mainClass": "LoginUI",
