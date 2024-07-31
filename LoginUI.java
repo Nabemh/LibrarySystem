@@ -4,6 +4,7 @@ import javax.swing.*;
 public class LoginUI extends JFrame {
 
     LoginUI() {
+        
         login jp = new login();
         add(jp);
     }
@@ -62,3 +63,4 @@ class login extends JPanel {
         g.drawImage(bg, 0, 0, this);
     }
 }
+
