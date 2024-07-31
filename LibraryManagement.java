@@ -14,9 +14,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
     private class BackgroundPanel extends JPanel {
         private Image backgroundImage;
 
-        // Constructor to load and set the background image
         public BackgroundPanel() {
-            // Use getClass().getResource to ensure the image is found correctly
             backgroundImage = new ImageIcon(getClass().getResource("/background.png")).getImage();
         }
 
@@ -30,28 +28,25 @@ public class LibraryManagement extends JFrame implements ActionListener {
         }
     }
 
-    // Constructor for the library management frame
+
     public LibraryManagement() {
         setTitle("Library Management System");
         setIconImage(Toolkit.getDefaultToolkit().getImage("appIcon.png"));
-        setSize(800, 600); // Adjust the size for better visibility
+        setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Center the frame
+        setLocationRelativeTo(null);
 
-        // Create the background panel
         BackgroundPanel backgroundPanel = new BackgroundPanel();
-        backgroundPanel.setLayout(new BorderLayout()); // Set the layout to BorderLayout
+        backgroundPanel.setLayout(new BorderLayout());
 
-        // Create the form panel for book details
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new GridBagLayout());
-        formPanel.setOpaque(false); // Make the panel transparent
+        formPanel.setOpaque(false);
 
         GridBagConstraints construct = new GridBagConstraints();
         construct.fill = GridBagConstraints.HORIZONTAL;
         construct.insets = new Insets(5, 5, 5, 5);
 
-        // Create labels and text fields
         JLabel label1 = new JLabel("Book ID:");
         JLabel label2 = new JLabel("Book Title:");
         JLabel label3 = new JLabel("Author:");
