@@ -10,7 +10,6 @@ public class LibraryManagement extends JFrame implements ActionListener {
     private JButton addButton, viewButton, editButton, deleteButton, clearButton, reportButton, exitButton;
     private ArrayList<Book> books = new ArrayList<>();
 
-    // Inner class for the background panel
     private class BackgroundPanel extends JPanel {
         private Image backgroundImage;
 

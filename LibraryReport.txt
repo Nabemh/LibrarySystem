@@ -1,0 +1,12 @@
+Book Report: 
+
+Book ID    Title                     Author          Publisher            Year  ISBN          Copies
+001        Introduction to Calculus  Dr. Alice Green Academic Press       2020  978-0-12345-678-9 13   
+002        Modern Physics: Concepts and Applications Prof. John Thompson Pearson Education    2019  978-0-98765-432-1 4    
+003        Principles of Microeconomics Dr. Emily Foster McGraw-Hill Education 2018   978-1-23456-789-0 6    
+005        Data Structures and Algorithms in Java Dr. Sophia Li   O'Reilly Media       2021  978-1-87654-321-0 6    
+006        Human Anatomy and Physiology Prof. Richard Harris Elsevier             2017  978-0-23456-987-6 3    
+007        The Art of Computer Programming Dr. Donald Knuth Addison-Wesley       2023  978-1-56789-234-5 6    
+008        Fundamentals of Financial Accounting Prof. Laura Johnson Cengage Learning     2020  978-1-34567-890-1 4    
+009        Environmental Science: A Global Perspective Dr. Sarah Martinez Cambridge University Press 2022  978-0-65432-198-7 12   
+011                                                                                                
