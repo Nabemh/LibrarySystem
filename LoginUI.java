@@ -16,7 +16,7 @@ class login extends JPanel {
     Image bg;
 
     login() {
-        back = new ImageIcon("background.png");
+        back = new ImageIcon("images/background.png");
         bg = back.getImage();
 
         setLayout(new GridBagLayout());

@@ -12,7 +12,7 @@ public class AdvancedSplashScreen extends JWindow {
         setSize(600, 500);
         setLocationRelativeTo(null);
 
-        JLabel backgroundImage = new JLabel(new ImageIcon("background.jpeg"));
+        JLabel backgroundImage = new JLabel(new ImageIcon("images/background.jpeg"));
         backgroundImage.setLayout(null);
         setContentPane(backgroundImage);
         backgroundImage.setBounds(0, 0, getWidth(), getHeight());

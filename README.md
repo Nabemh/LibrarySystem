@@ -222,8 +222,7 @@ This project was developed by the following team members:
 
 ### 1. Splash Screen
 
-<!-- ![Splash Screen](/home/luxury/Documents/Library/screenshots/Screenshot from 2024-07-31 20-10-08.png.png) -->
-<!-- Placeholder for Splash Screen Image -->
+![Splash Screen](screenshots/Screenshot%20from%202024-07-31%2020-10-08.png)
 
 <p>
   <em>This is set to display for 30 seconds with a progress bar.</em>
@@ -231,28 +230,23 @@ This project was developed by the following team members:
 
 ### 2. Login Page
 
-<!-- ![Login Page](path/to/login-page.png) -->
-<!-- Placeholder for Login Page Image -->
+![Login Page](screenshots/Screenshot%20from%202024-08-01%2000-17-39.png)
 
 ### 3. Registration Page
 
-<!-- ![Registration Page](path/to/registration-page.png) -->
-<!-- Placeholder for Registration Page Image -->
+![Registration Page](screenshots/Screenshot%20from%202024-08-01%2000-27-29.png)
 
 ### 4. Library Management Frame
 
-<!-- ![Library Management Frame](path/to/library-management-frame.png) -->
-<!-- Placeholder for Library Management Frame Image -->
+![Library Management Frame](screenshots/Screenshot%20from%202024-08-01%2018-12-31.png)
 
 ### 5. Add Book
 
-<!-- ![Add Book](path/to/add-book.png) -->
-<!-- Placeholder for Add Book Image -->
+![Add Book](screenshots/Screenshot%20from%202024-08-01%2015-41-22.png)
 
 ### 6. View Books
 
-<!-- ![View Books](path/to/view-books.png) -->
-<!-- Placeholder for View Books Image -->
+![View Books](screenshots/Screenshot%20from%202024-08-01%2015-48-14.png)
 
 <p>
   <em>Table generated successfully with all records as inputted formally.</em>
@@ -260,8 +254,7 @@ This project was developed by the following team members:
 
 ### 7. Edit Book
 
-<!-- ![Edit Book](path/to/edit-book.png) -->
-<!-- Placeholder for Edit Book Image -->
+![Edit Book](screenshots/Screenshot%20from%202024-08-01%2015-51-30.png)
 
 <p>
   <em>Enter the ID of the book to be edited (record ID 011).</em>
@@ -269,13 +262,11 @@ This project was developed by the following team members:
 
 ### 8. Book Edited Successfully
 
-<!-- ![Book Edited Successfully](path/to/book-edited-success.png) -->
-<!-- Placeholder for Book Edited Successfully Image -->
+![Book Edited Successfully](screenshots/Screenshot%20from%202024-08-01%2015-52-05.png)
 
 ### 9. Delete Book
 
-<!-- ![Delete Book](path/to/delete-book.png) -->
-<!-- Placeholder for Delete Book Image -->
+![Delete Book](screenshots/Screenshot%20from%202024-08-01%2015-52-16.png)
 
 <p>
   <em>Enter the ID of the book to be deleted (record ID 010).</em>
@@ -283,8 +274,7 @@ This project was developed by the following team members:
 
 ### 10. Delete and Edit Confirmation
 
-<!-- ![Delete and Edit Confirmation](path/to/delete-edit-confirmation.png) -->
-<!-- Placeholder for Delete and Edit Confirmation Image -->
+![Delete and Edit Confirmation](screenshots/Screenshot%20from%202024-08-01%2015-52-43.png)
 
 <p>
   <em>Record 011 edited, record 010 deleted…</em>
@@ -292,8 +282,7 @@ This project was developed by the following team members:
 
 ### 11. Generate Report
 
-<!-- ![Generate Report](path/to/generate-report.png) -->
-<!-- Placeholder for Generate Report Image -->
+![Generate Report](screenshots/Screenshot%20from%202024-08-01%2015-52-59.png)
 
 <p>
   <em>When the generate report button is clicked, records are automatically generated and saved in <code>LibraryReport.txt</code>.</em>
@@ -301,8 +290,7 @@ This project was developed by the following team members:
 
 ### 12. Report Confirmation
 
-<!-- ![Report Confirmation](path/to/report-confirmation.png) -->
-<!-- Placeholder for Report Confirmation Image -->
+![Report Confirmation](screenshots/Screenshot%20from%202024-08-01%2015-53-05.png)
 
 <p>
   <em><code>LibraryReport.txt</code> successfully created and saved!</em>
@@ -310,5 +298,4 @@ This project was developed by the following team members:
 
 ### 13. Exit
 
-<!-- ![Exit](path/to/exit.png) -->
-<!-- Placeholder for Exit Image -->
+![Exit](screenshots/Screenshot%20from%202024-08-01%2015-55-08.png)

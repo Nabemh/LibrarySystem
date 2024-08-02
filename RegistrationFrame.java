@@ -13,7 +13,7 @@ public class RegistrationFrame extends JFrame {
     private final JButton registerButton;
 
     public RegistrationFrame() {
-        Image backgroundImage = new ImageIcon("background.png").getImage();
+        Image backgroundImage = new ImageIcon("images/background.png").getImage();
 
         BackgroundPanel backgroundPanel = new BackgroundPanel(backgroundImage);
         backgroundPanel.setLayout(new GridBagLayout());

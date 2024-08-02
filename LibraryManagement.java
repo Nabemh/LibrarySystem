@@ -14,7 +14,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
         private Image backgroundImage;
 
         public BackgroundPanel() {
-            backgroundImage = new ImageIcon(getClass().getResource("/background.png")).getImage();
+            backgroundImage = new ImageIcon(getClass().getResource("images/background.png")).getImage();
         }
 
         @Override
@@ -29,7 +29,7 @@ public class LibraryManagement extends JFrame implements ActionListener {
 
     public LibraryManagement() {
         setTitle("Library Management System");
-        setIconImage(Toolkit.getDefaultToolkit().getImage("appIcon.png"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("images/appIcon.png"));
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
