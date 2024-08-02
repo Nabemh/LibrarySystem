@@ -222,7 +222,7 @@ This project was developed by the following team members:
 
 ### 1. Splash Screen
 
-<!-- ![Splash Screen](path/to/splash-screen.png) -->
+<!-- ![Splash Screen](/home/luxury/Documents/Library/screenshots/Screenshot from 2024-07-31 20-10-08.png.png) -->
 <!-- Placeholder for Splash Screen Image -->
 
 <p>
@@ -312,15 +312,3 @@ This project was developed by the following team members:
 
 <!-- ![Exit](path/to/exit.png) -->
 <!-- Placeholder for Exit Image -->
-
-## License
-
-<p>
-  This project is licensed under the <a href="LICENSE">MIT License</a>.
-</p>
-
-## Acknowledgments
-
-<p>
-  We would like to thank our mentors and professors for their invaluable guidance and support throughout this project. Special thanks to the Java and GUI development communities for their resources and tutorials.
-</p>
