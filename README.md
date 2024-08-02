@@ -296,6 +296,8 @@ This project was developed by the following team members:
   <em><code>LibraryReport.txt</code> successfully created and saved!</em>
 </p>
 
+![Report Confirmed!](screenshots/Screenshot%20from%202024-08-01%2015-55-39.png)
+
 ### 13. Exit
 
-![Exit](screenshots/Screenshot%20from%202024-08-01%2015-55-08.png)
+![Exit](screenshots/Screenshot%20from%202024-08-01%2015-55-28.png)
